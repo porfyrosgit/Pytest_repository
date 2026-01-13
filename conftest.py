@@ -1,0 +1,1 @@
+#This is for sharing "fixtures" (setup/teardown code). Pytest reads it, but it doesn't count as a test itself.
