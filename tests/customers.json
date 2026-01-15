@@ -1,0 +1,31 @@
+{
+  "test_scenarios": [
+    {
+      "customer_id": "CH-2024-001",           
+      "expected_name": "Hans Müller",                       
+        "package_type": "EU_Roaming_7Days",   
+        "price_chf": 19.90,                   
+        "data_limit_mb": 2048,                
+        "duration_days": 7                    
+      
+    },
+    {
+      "customer_id": "CH-2024-002",
+      "expected_name": "Sophie Weber",
+        "package_type": "World_Roaming_30Days",
+        "price_chf": 89.90,
+        "data_limit_mb": 10240,               
+        "duration_days": 30
+      
+    },
+    {
+      "customer_id": "CH-2024-003",
+      "expected_name": "Marco Rossi",
+        "package_type": "EU_Roaming_1Day",
+        "price_chf": 5.90,
+        "data_limit_mb": 500,                 
+        "duration_days": 1
+      
+    }
+  ]
+}
