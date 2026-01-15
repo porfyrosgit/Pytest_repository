@@ -68,10 +68,10 @@ def db_refresh (db_conn):
  cur.execute("""                                  
             UPDATE roaming_packages
             SET status='active',
-            data_used_mb=0,
-            expiry_date=NOW()+INTERVAL'7 days'
+                 data_used_mb=0,
+                 expiry_date=NOW()+INTERVAL'7 days'
             WHERE customer_id LIKE 'CH-2024-%';
-""")
+ """)
  db_conn.commit()     #commit changes to DB permanently
  cur.close
 
