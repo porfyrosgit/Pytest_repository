@@ -32,7 +32,7 @@ def db_conn():                                  #Created once per class for Spee
     #"setup_db.sql" → the SQL file
     #join → glue them together into a full path
     sql_path = os.path.join(os.path.dirname(__file__), "setup_db.sql")
-    
+
     with open(sql_path, "r", encoding="utf-8") as f:          #setup:create table with customer roaming package, pulling query from setup_db.sql
 
        sql_script=f.read()
@@ -68,8 +68,7 @@ def db_refresh (db_conn):
  cur.execute("""                                  
             UPDATE roaming_packages
             SET status='active',data_used_mb=0,expiry_date=NOW()+INTERVAL'7 days'
-            WHERE customer_id LIKE 'CH-2024-%';
-            """)
+            WHERE customer_id LIKE 'CH-2024-%';""")
  db_conn.commit()     #commit changes to DB permanently
  cur.close
 
