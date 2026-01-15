@@ -63,16 +63,16 @@ def db_refresh (db_conn):
     
     #Method: Even though the connection stays open, we ensure the data is 'active' and usable
     
- cur=db_conn.cursor()     
+   cur=db_conn.cursor()     
 #.execute sends the SQL string to Postgres
- cur.execute("""                                  
+   cur.execute("""                                  
             UPDATE roaming_packages
             SET status='active',
                  data_used_mb=0,
                  expiry_date=NOW()+INTERVAL'7 days'
             WHERE customer_id LIKE 'CH-2024-%';
- """)
- db_conn.commit()     #commit changes to DB permanently
- cur.close
+    """)
+   db_conn.commit()     #commit changes to DB permanently
+   cur.close()
 
 
