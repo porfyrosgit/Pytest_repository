@@ -27,7 +27,14 @@ def db_conn():                                  #Created once per class for Spee
     except psycopg2.OperationalError as e:
         raise RuntimeError(f"DB connection failed: {e}")
     
-    with open("setup_db.sql","r",encoding="utf-8") as f:  #setup:create table with customer roaming package, pulling query from setup_db.sql
+    # FOR CICD TO FIND THE setup_db.sql : 
+    #os.path.dirname(__file__) → the folder where conftest.py lives
+    #"setup_db.sql" → the SQL file
+    #join → glue them together into a full path
+    sql_path = os.path.join(os.path.dirname(__file__), "setup_db.sql")
+    
+    with open(sql_path, "r", encoding="utf-8") as f:          #setup:create table with customer roaming package, pulling query from setup_db.sql
+
        sql_script=f.read()
 
        cur=conn.cursor()
