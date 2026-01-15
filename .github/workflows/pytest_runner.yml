@@ -72,6 +72,15 @@ jobs:
           name: allure-report
           path: allure-report
 
+      # --- Deploy Allure Report to GitHub Pages ---
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-report
+          destination_dir: allure
+
       # --- Run Playwright Tests ---
       - name: Run Playwright Tests
         run: npx playwright test --reporter=html

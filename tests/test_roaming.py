@@ -2,7 +2,7 @@
 #  db_conn fixture gets seen from conftest.py therefor no import is needed, we just inject it
 
 #TO DO: json with testdata > use it as DB seed for setup and iterate over it with @pytest.mark.parametrize
-#TO DO: use the setup_db.sql only to set the DB schema (table column names) not to insert data, json will take care of this.
+#TO DO: use the setup_db.sql only to set the DB schema (table column names) not to insert data, json will take care of this
 
 import pytest
 from psycopg2.extras import RealDictCursor    #RealDictCursor returns row as dict, use column name as key to fetch the respective DB column.
