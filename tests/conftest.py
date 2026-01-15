@@ -61,7 +61,7 @@ def db_conn():                                  #Created once per class for Spee
 #autouse=True here ensures DB state is reset before every test function, guarantees state isolation
 def db_refresh (db_conn):         
     
-    #Method: Even though the connection stays open, we ensure the data is 'active' and usable.
+    #Method: Even though the connection stays open, we ensure the data is 'active' and usable
     
  cur=db_conn.cursor()     
 #.execute sends the SQL string to Postgres
